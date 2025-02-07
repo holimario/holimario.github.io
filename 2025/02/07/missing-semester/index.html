@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="missing-semester(1)-shell, ">
-    <meta name="description" content="如果需要同时输入多个argument，那么如下两种表达是等价的：
+    <meta name="description" content="shell基本使用如果需要同时输入多个argument，那么如下两种表达是等价的：
 echo Hello\ World
 echo &#34;Hello World&#34;
-机器有其自身的内置函数，这些内置函数是终端系统可以直接执行的，机器通过环境变量来定位这些内置函数的位">
+机器有其自身的内置函数，这些内置函数是终端系统可以直接执行的，机器通过环境变量来定">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -342,14 +342,14 @@ echo &#34;Hello World&#34;
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    532
+                    819
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -372,7 +372,7 @@ echo &#34;Hello World&#34;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>如果需要同时输入多个argument，那么如下两种表达是等价的：</p>
+                <h2 id="shell基本使用"><a href="#shell基本使用" class="headerlink" title="shell基本使用"></a>shell基本使用</h2><p>如果需要同时输入多个argument，那么如下两种表达是等价的：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> Hello<span class="token punctuation">\</span> World
 <span class="token builtin class-name">echo</span> <span class="token string">"Hello World"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>机器有其自身的内置函数，这些内置函数是终端系统可以直接执行的，机器通过<strong>环境变量</strong>来定位这些内置函数的位置。如下操作可以显示环境变量的位置：</p>
@@ -404,7 +404,23 @@ echo &#34;Hello World&#34;
 <span class="token function">rm</span> <span class="token punctuation">[</span>文件位置<span class="token punctuation">]</span> %对文件进行删除
 <span class="token function">rmdir</span> <span class="token punctuation">[</span>文件夹<span class="token punctuation">]</span> %仅用于空文件夹的清除
 <span class="token function">mkdir</span> <span class="token punctuation">[</span>文件夹名<span class="token punctuation">]</span> %用于文件夹创建
-<span class="token function">man</span> <span class="token punctuation">[</span>指令或程序<span class="token punctuation">]</span> %显示程序的用户手册，按下q来退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">man</span> <span class="token punctuation">[</span>指令或程序<span class="token punctuation">]</span> %显示程序的用户手册，按下q来退出
+^L %清空终端，回到最上部分<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="建立程序间的连接"><a href="#建立程序间的连接" class="headerlink" title="建立程序间的连接"></a>建立程序间的连接</h2><p>指令一般都有输入流和输出流，<strong>最基本的输入流就是键盘，最基本的输出流就是终端</strong>。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span> <span class="token function">file</span> %将file的内容作为输入流
+<span class="token operator">&gt;</span> <span class="token function">file</span> %将输出流作为file的内容
+<span class="token builtin class-name">echo</span> hello <span class="token operator">&gt;</span> hello.txt %文件中的内容就是hello
+<span class="token function">cat</span> hello.txt %输出文件内容到终端
+<span class="token function">cat</span> <span class="token operator">&lt;</span> hello.txt %将hello.txt中内容作为cat的输入流
+<span class="token function">cat</span> <span class="token operator">&lt;</span> hello.txt <span class="token operator">&gt;</span> hello2.txt
+<span class="token operator">&gt;&gt;</span> <span class="token function">file</span> %将新信息添加到file中，而不是覆写
+   <span class="token operator">|</span>   %pipe, 将左边程序的输出作为右边程序的输入
+<span class="token function">ls</span> <span class="token parameter variable">-l</span> / <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-n1</span> %罗列/下的详细文件信息，给到右侧程序，右侧程序筛选出最后1条
+<span class="token function">ls</span> <span class="token parameter variable">-l</span> / <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-n1</span> <span class="token operator">&gt;</span> ls.txt
+<span class="token function">curl</span> <span class="token parameter variable">--head</span> <span class="token parameter variable">--silent</span> google.com <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> content-length <span class="token operator">|</span> <span class="token function">cut</span> <span class="token parameter variable">--delimiter</span><span class="token operator">=</span><span class="token string">' '</span> <span class="token parameter variable">-f2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>事实上可以通过简单的pipe来实现个人媒体直播，将自己的本地文件作为左侧程序，右侧程序则是向互联网发送数据。</p>
+<h2 id="root用户"><a href="#root用户" class="headerlink" title="root用户"></a>root用户</h2><p>有时候需要作为root用户执行指令</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">sudo <span class="token punctuation">[</span>指令<span class="token punctuation">]</span> <span class="token operator">%</span>su意思是<span class="token builtin">super</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
