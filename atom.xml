@@ -46,14 +46,14 @@
     <link href="http://example.com/2025/02/07/missing-semester/"/>
     <id>http://example.com/2025/02/07/missing-semester/</id>
     <published>2025-02-07T11:35:23.000Z</published>
-    <updated>2025-02-07T13:14:42.760Z</updated>
+    <updated>2025-02-07T13:30:52.727Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;如果需要输入同时输入多个argument，那么如下两种表达是等价的：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;如果需要同时输入多个argument，那么如下两种表达是等价的：&lt;/p&gt;
 &lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span</summary>
         
       
