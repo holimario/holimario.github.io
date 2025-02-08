@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title></title>
+  <title>Holi Blog</title>
   
-  <subtitle>_</subtitle>
+  <subtitle>(0`3`0)</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-02-08T09:09:04.697Z</updated>
+  <updated>2025-02-08T16:53:33.705Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>missing-semester(2)-shellh工具和脚本</title>
-    <link href="http://example.com/2025/02/08/missing-semester-2-shellh-gong-ju-he-jiao-ben/"/>
-    <id>http://example.com/2025/02/08/missing-semester-2-shellh-gong-ju-he-jiao-ben/</id>
+    <title>missing-semester(2)-shell工具和脚本</title>
+    <link href="http://example.com/2025/02/08/missing-semester-2-shell-gong-ju-he-jiao-ben/"/>
+    <id>http://example.com/2025/02/08/missing-semester-2-shell-gong-ju-he-jiao-ben/</id>
     <published>2025-02-08T05:35:58.000Z</published>
-    <updated>2025-02-08T09:09:04.697Z</updated>
+    <updated>2025-02-08T16:53:33.705Z</updated>
     
     
       
@@ -35,7 +35,7 @@
     
     
     
-    <category term="实践学习" scheme="http://example.com/categories/%E5%AE%9E%E8%B7%B5%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="shell" scheme="http://example.com/tags/shell/"/>
@@ -47,7 +47,7 @@
     <link href="http://example.com/2025/02/07/hello-world/"/>
     <id>http://example.com/2025/02/07/hello-world/</id>
     <published>2025-02-07T11:35:23.000Z</published>
-    <updated>2025-02-07T11:42:44.693Z</updated>
+    <updated>2025-02-08T16:53:49.631Z</updated>
     
     
       
@@ -60,7 +60,7 @@
     
     
     
-    <category term="测试" scheme="http://example.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    <category term="其他" scheme="http://example.com/categories/%E5%85%B6%E4%BB%96/"/>
     
     
     <category term="shell" scheme="http://example.com/tags/shell/"/>
@@ -69,10 +69,10 @@
   
   <entry>
     <title>missing-semester(1)-shell</title>
-    <link href="http://example.com/2025/02/07/missing-semester/"/>
-    <id>http://example.com/2025/02/07/missing-semester/</id>
+    <link href="http://example.com/2025/02/07/missing-semester-1-shell/"/>
+    <id>http://example.com/2025/02/07/missing-semester-1-shell/</id>
     <published>2025-02-07T11:35:23.000Z</published>
-    <updated>2025-02-07T16:01:07.646Z</updated>
+    <updated>2025-02-08T16:53:31.524Z</updated>
     
     
       
@@ -86,7 +86,7 @@
     
     
     
-    <category term="实践学习" scheme="http://example.com/categories/%E5%AE%9E%E8%B7%B5%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="shell" scheme="http://example.com/tags/shell/"/>
