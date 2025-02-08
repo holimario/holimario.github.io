@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>missing-semester(2)-shellh工具和脚本</title>
+      <link href="/2025/02/08/missing-semester-2-shellh-gong-ju-he-jiao-ben/"/>
+      <url>/2025/02/08/missing-semester-2-shellh-gong-ju-he-jiao-ben/</url>
+      
+        <content type="html"><![CDATA[<h2 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h2><p>在shell中，空格十分重要。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token assign-left variable">foo</span><span class="token operator">=</span>bar %可以执行$ foo <span class="token operator">=</span> bar %无法执行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>注意单引号和双引号的区别。</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">"Value is <span class="token variable">$foo</span>"</span> %<span class="token variable">$foo</span>会转变为其对应的变量值$ <span class="token builtin class-name">echo</span> <span class="token string">'Value is $foo'</span> %<span class="token variable">$foo</span>不会转换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>下面是一个bash脚本的例子<code>mcd.sh</code>（创建以第一个参数为名的文件夹并进入）：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function-name function">mcd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>ppmkdir <span class="token parameter variable">-p</span> <span class="token string">"<span class="token variable">$1</span>"</span>ppcd <span class="token string">"<span class="token variable">$1</span>"</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>其中<code>$0</code>表示脚本自身的名字，<code>$1</code>到<code>$9</code>依次表示各个输入参数，<code>$_</code>是上一个指令的最后一个参数，<code>$?</code>可以获得上一个指令的错误代码，<code>!!</code>可以指代上一条指令。可以通过如下指令来加载新定义的函数：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">source</span> mcd.sh %脚本中包含的函数会在当前shell中加载<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>逻辑符号：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token boolean">false</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token string">"Oops fail"</span> %如果第一条指令出错，则执行第二条指令$ <span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token string">"Things went well"</span> %如果第一条指令正确，才会执行第二条指令$ <span class="token boolean">false</span> <span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token string">"This will alwanys print"</span> %分号只是将两条指令分割开来<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>将某个指令的输出赋值给一个变量：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token assign-left variable">foo</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>$ <span class="token builtin class-name">echo</span> <span class="token string">"We are in <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>冷门特性——进程替换：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">cat</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">ls</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">ls</span> <span class="token punctuation">..</span><span class="token punctuation">)</span> %<span class="token operator">&lt;</span><span class="token punctuation">(</span>命令<span class="token punctuation">)</span>相当于把该命令的输出作为一个临时文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="shell工具"><a href="#shell工具" class="headerlink" title="shell工具"></a>shell工具</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实践学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2025/02/07/hello-world/"/>
       <url>/2025/02/07/hello-world/</url>
