@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-02-09T15:14:10.627Z</updated>
+  <updated>2025-02-09T15:25:33.256Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>missing-semester(3)-vim</title>
+    <link href="http://example.com/2025/02/09/missing-semester-3-vim/"/>
+    <id>http://example.com/2025/02/09/missing-semester-3-vim/</id>
+    <published>2025-02-09T15:25:33.000Z</published>
+    <updated>2025-02-09T15:25:33.256Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>missing-semester(2)-shell工具和脚本</title>
