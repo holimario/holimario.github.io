@@ -8,9 +8,21 @@
       <link href="/2025/02/09/missing-semester-3-vim/"/>
       <url>/2025/02/09/missing-semester-3-vim/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><p>vim编辑器是一种多模态编辑器，其允许用户切换不同的模式来进行不同的编辑任务：</p><ul><li>normal：最初始的模式，主要用于查询和移动</li><li>insert：<code>i</code></li><li>replace：<code>r</code></li><li>visual：<code>v</code></li><li>visual line：<code>shift-v</code></li><li>visual block：<code>ctrl-v</code></li><li>command line：<code>:</code></li></ul><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="buffer-window-tab"><a href="#buffer-window-tab" class="headerlink" title="buffer, window, tab"></a>buffer, window, tab</h3><p>每一个buffer对应一个文件，一个window可以显示一个buffer（多个window可以对应同一个buffer），每一个tab可以打开多个window。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vim </tag>
+            
+        </tags>
       
     </entry>
     
