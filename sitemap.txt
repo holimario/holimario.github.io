@@ -18,5 +18,5 @@ http://找.fun/contact/index.html
 http://找.fun/
 http://找.fun/tags/shell/
 http://找.fun/tags/vim/
-http://找.fun/categories/%E5%AD%A6%E4%B9%A0/
 http://找.fun/categories/%E5%85%B6%E4%BB%96/
+http://找.fun/categories/%E5%AD%A6%E4%B9%A0/
