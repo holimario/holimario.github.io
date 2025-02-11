@@ -6,7 +6,7 @@
   <link href="http://找.fun/atom.xml" rel="self"/>
   
   <link href="http://找.fun/"/>
-  <updated>2025-02-11T08:26:40.491Z</updated>
+  <updated>2025-02-11T09:30:33.753Z</updated>
   <id>http://找.fun/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&#39;智能计算系统第1章-概述&#39;</title>
+    <link href="http://找.fun/2025/02/11/4cc7c60c.html"/>
+    <id>http://找.fun/2025/02/11/4cc7c60c.html</id>
+    <published>2025-02-11T08:54:58.968Z</published>
+    <updated>2025-02-11T09:30:33.753Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;三个流派&quot;&gt;&lt;a href=&quot;#三个流派&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="http://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="AI;系统" scheme="http://找.fun/tags/AI-%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>missing-semester(3)-vim</title>
