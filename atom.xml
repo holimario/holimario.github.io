@@ -6,7 +6,7 @@
   <link href="http://找.fun/atom.xml" rel="self"/>
   
   <link href="http://找.fun/"/>
-  <updated>2025-02-11T09:38:50.014Z</updated>
+  <updated>2025-02-11T10:19:25.171Z</updated>
   <id>http://找.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://找.fun/2025/02/11/4cc7c60c.html"/>
     <id>http://找.fun/2025/02/11/4cc7c60c.html</id>
     <published>2025-02-11T08:54:58.968Z</published>
-    <updated>2025-02-11T09:38:50.014Z</updated>
+    <updated>2025-02-11T10:19:25.171Z</updated>
     
     
       
@@ -37,7 +37,9 @@
     <category term="学习" scheme="http://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="AI;系统" scheme="http://找.fun/tags/AI-%E7%B3%BB%E7%BB%9F/"/>
+    <category term="AI" scheme="http://找.fun/tags/AI/"/>
+    
+    <category term="系统" scheme="http://找.fun/tags/%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
