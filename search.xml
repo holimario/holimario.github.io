@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Parallel Computing (1)</title>
+      <link href="/2025/02/12/aa9eecf8.html"/>
+      <url>/2025/02/12/aa9eecf8.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="课程核心主题"><a href="#课程核心主题" class="headerlink" title="课程核心主题"></a>课程核心主题</h2><p>【课程前置：计算机组成相关课程】</p><h3 id="设计并编写真的能够加速的并行程序"><a href="#设计并编写真的能够加速的并行程序" class="headerlink" title="设计并编写真的能够加速的并行程序"></a>设计并编写真的能够加速的并行程序</h3><p><strong>并行思维</strong>：</p><ol><li>将工作分解为多个块，使得这些块可以安全地并行执行</li><li>将每块工作分配给处理器</li><li>适当地规划不同处理器之间的交流和同步问题，保证这些问题不会限制加速比</li></ol><p><strong>对上述并行思维各项任务的抽象（架构）</strong>：使用现有并行编程语言进行编程</p><h3 id="并行计算机硬件的实现：并行计算机如何工作"><a href="#并行计算机硬件的实现：并行计算机如何工作" class="headerlink" title="并行计算机硬件的实现：并行计算机如何工作"></a>并行计算机硬件的实现：并行计算机如何工作</h3><p><strong>可以高效实现程序抽象的架构</strong>：</p><ul><li>实现的性能特征</li><li>设计的trade-off：性能，便利，能耗</li></ul><p><strong>为什么需要了解硬件</strong>：</p><ul><li>计算机的设计架构对于程序编写十分重要</li><li>效率和性能十分重要</li></ul><h3 id="关注效率"><a href="#关注效率" class="headerlink" title="关注效率"></a>关注效率</h3><p><strong>快速并不意味着高效率！</strong></p><p>使用一个具有10个处理器的计算机，但是仅仅实现了2倍的加速比，这显然是不行的。</p><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><p>电脑程序是一系列需要执行的指令。</p><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p>指令是处理器需要处理的操作。执行指令实际上修改了电脑的状态，所谓状态就是指存储在电脑中的数据，这些数据处于寄存器或者存储器中。</p><h3 id="指令级别并行"><a href="#指令级别并行" class="headerlink" title="指令级别并行"></a>指令级别并行</h3><p><strong>instruction level parallelism</strong>（ILP）：构建</p><h3 id="寄存器-缓存-存储器多级结构"><a href="#寄存器-缓存-存储器多级结构" class="headerlink" title="寄存器-缓存-存储器多级结构"></a>寄存器-缓存-存储器多级结构</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 并行计算 </tag>
+            
+            <tag> CS149 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>智能计算系统第1章-概述</title>
       <link href="/2025/02/11/4cc7c60c.html"/>
       <url>/2025/02/11/4cc7c60c.html</url>
