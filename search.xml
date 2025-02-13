@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Parallel Computing (2)</title>
+      <link href="/2025/02/12/81b3bf3b.html"/>
+      <url>/2025/02/12/81b3bf3b.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="对多级缓存的认识"><a href="#对多级缓存的认识" class="headerlink" title="对多级缓存的认识"></a>对多级缓存的认识</h2><p>多种miss：</p><ul><li>cold miss</li><li>conflict miss</li><li>capacity miss</li></ul><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_018.jpg" alt="slide_018"></p><h2 id="多种并行思路"><a href="#多种并行思路" class="headerlink" title="多种并行思路"></a>多种并行思路</h2><p>在本次课程中，除开上一次课程介绍的超标量（指令级别并行），又介绍了多种并行处理器思路来提升吞吐量（throughput），考虑到</p><ul><li>并行执行</li><li>访问存储器的延迟（latency）</li></ul><h3 id="超标量（super-scalar）"><a href="#超标量（super-scalar）" class="headerlink" title="超标量（super scalar）"></a>超标量（super scalar）</h3><p>对于同一个程序，可以同时抓取预先编译好的多个可并行指令进行执行。</p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_024.jpg" alt="slide_024"></p><p>程序中的并行是由硬件自动发现的。</p><h3 id="多核处理器"><a href="#多核处理器" class="headerlink" title="多核处理器"></a>多核处理器</h3><p>在还没出现多核处理器的时候，人们设计CPU往往致力于增加更多的模块来让单条指令执行地更快。</p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_025.jpg" alt="slide_025"></p><p>但是通过删去这些额外的模块，实际上可以实现多个核的处理器（单核的性能比原来要差）。</p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_027.jpg" alt="slide_027"></p><p>这样通过在程序中定义多个线程，就可以比较充分地利用两个核的性能。程序示意图如下所示：</p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_029.jpg" alt="slide_029"></p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_030.jpg" alt="slide_030"></p><p>现代多核处理器的例子：</p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_033.jpg" alt="slide_033"></p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_034.jpg" alt="slide_034"></p><h3 id="单指令多数据流（SIMD）"><a href="#单指令多数据流（SIMD）" class="headerlink" title="单指令多数据流（SIMD）"></a>单指令多数据流（SIMD）</h3><p>single instruction, multiple data。</p><p>通过引入更多的ALU（计算单元），使得可以在同一时间对多个数据进行相同的运算操作。</p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_037.jpg" alt="slide_037"></p><p>如上架构可以执行如下的数据并行程序：</p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_039.jpg" alt="slide_039"></p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_030.jpg" alt="slide_030"></p><p>【注意上述第二个程序既可以被多核处理器处理也可以被SIMD处理】向量化是由编译器实现（explicit）或者在runtime时由硬件实现（implicit）。</p><h4 id="一些行话"><a href="#一些行话" class="headerlink" title="一些行话"></a>一些行话</h4><ul><li>指令流一致性、相干性（coherence）<ul><li>相同指令可以同时作用于多个数据</li><li>一致执行对于SIMD来说是必要的</li><li>一致执行对于多核并行并不是必要的</li></ul></li><li>差异执行（divergent）<ul><li>指令流缺乏一致性</li></ul></li></ul><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_049.jpg" alt="slide_049"></p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_050.jpg" alt="slide_050"></p><h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_053.jpg" alt="slide_053"></p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_054.jpg" alt="slide_054"></p><h2 id="访问存储的加速"><a href="#访问存储的加速" class="headerlink" title="访问存储的加速"></a>访问存储的加速</h2><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_057.jpg" alt="slide_057"></p><h3 id="数据预加载"><a href="#数据预加载" class="headerlink" title="数据预加载"></a>数据预加载</h3><p>目前有一些现代CPU架构，其可以在使用到数据前自动地进行分析，并提前加载数据，从而减少stall，但是错误估计实际上会降低性能。</p><h3 id="多线程减少stall"><a href="#多线程减少stall" class="headerlink" title="多线程减少stall"></a>多线程减少stall</h3><p>在同一个核上interleave（交织）多个线程来提升利用率。</p><p><img src="D:\myblog\hexo-blog\source\_posts\parallel-compute2\slide_066.jpg" alt="slide_066"></p><p>执行单个线程的时间实际上可能仍然很长，但是多个线程总体执行时间相较于串行执行变少了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 并行计算 </tag>
+            
+            <tag> CS149 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Parallel Computing (1)</title>
       <link href="/2025/02/12/aa9eecf8.html"/>
       <url>/2025/02/12/aa9eecf8.html</url>
