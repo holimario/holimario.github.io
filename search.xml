@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>强化学习入门知识</title>
+      <link href="/2025/02/14/89184582.html"/>
+      <url>/2025/02/14/89184582.html</url>
+      
+        <content type="html"><![CDATA[<p>本文参考<a href="https://mofanpy.com/tutorials/machine-learning/reinforcement-learning/">莫烦python-强化学习</a>。</p><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>一种对强化学习的直观理解就是通过不断地尝试，从实践中学习，最终找到某种规律，得到一个训练后的agent。从实践中学习需要一个老师，这个老师会根据agent的行为进行打分，agent的训练过程实际上就是记住了各种行为对应的打分。</p><p>监督学习中使用的数据是同时包含数据和正确标签的，而强化学习可以认为老师给行为打的分数就是某种标签。</p><h2 id="强化学习分类"><a href="#强化学习分类" class="headerlink" title="强化学习分类"></a>强化学习分类</h2><h3 id="model-free和model-based"><a href="#model-free和model-based" class="headerlink" title="model-free和model-based"></a>model-free和model-based</h3><p>在model-free的方法中，都是直接从环境中得到反馈然后学习，比如Q Learning，Sarsa，Policy Gradients。而model-based则增加了一个程序，为真实世界增加了建模模型来进行模拟，这种方法可以模拟一些真实场景中不存在的情况，并且这种训练出来的RL模型具有一定想象力，可以预判接下来要发生的所有情况来进行行为选择。</p><h3 id="基于概率和基于价值"><a href="#基于概率和基于价值" class="headerlink" title="基于概率和基于价值"></a>基于概率和基于价值</h3><p>基于概率的模型可以通过感官分析下一步要采取的各种动作的概率，然后根据概率采取行动，比如Policy Gradients。而基于价值的模型则是会直接选择价值最高的动作，比如Q Learning，Sarsa。还有一种结合二者的方法，叫做Actor-Critic，actor 会基于概率做出动作, 而 critic 会对做出的动作给出动作的价值, 这样就在原有的 policy gradients 上加速了学习过程。</p><h3 id="回合更新和单步更新"><a href="#回合更新和单步更新" class="headerlink" title="回合更新和单步更新"></a>回合更新和单步更新</h3><p><img src="/pics/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/RLmtd3.png"></p><p>回合更新是在游戏结束后再总结这一回合中所有转折点，进行行为准则更新。而单步更新则是在游戏进行中每一步都在更新，不需要等到游戏结束。</p><p>Monte-carlo learning 和基础版的 policy gradients 等 都是回合更新制, Q learning, Sarsa，升级版的 policy gradients 等都是单步更新制。因为单步更新更有效率，所以现在大多方法都是基于单步更新。比如有的强化学习问题并不属于回合问题。</p><h3 id="在线学习和离线学习"><a href="#在线学习和离线学习" class="headerlink" title="在线学习和离线学习"></a>在线学习和离线学习</h3><p>在线学习就是指必须本人在场，边玩边学。离线学习则是可以选择自己玩，也可以选择看着别人玩，通过别人玩的记录来学习自己的行为准则。</p><p>最典型的在线学习就是 Sarsa 了，还有一种优化 Sarsa 的算法，叫做 Sarsa lambda，最典型的离线学习就是 Q learning，后来人也根据离线学习的属性，开发了更强大的算法，比如让计算机学会玩电动的 Deep-Q-Network。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 强化学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Parallel Computing (2)</title>
       <link href="/2025/02/12/81b3bf3b.html"/>
       <url>/2025/02/12/81b3bf3b.html</url>
