@@ -3,11 +3,11 @@
   <title>Holi Blog</title>
   
   <subtitle>(0`_`0)</subtitle>
-  <link href="http://找.fun/atom.xml" rel="self"/>
+  <link href="https://找.fun/atom.xml" rel="self"/>
   
-  <link href="http://找.fun/"/>
-  <updated>2025-02-14T02:30:36.473Z</updated>
-  <id>http://找.fun/</id>
+  <link href="https://找.fun/"/>
+  <updated>2025-02-14T03:45:51.696Z</updated>
+  <id>https://找.fun/</id>
   
   <author>
     <name>Holi</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Parallel Computing (2)</title>
-    <link href="http://找.fun/2025/02/12/81b3bf3b.html"/>
-    <id>http://找.fun/2025/02/12/81b3bf3b.html</id>
+    <link href="https://找.fun/2025/02/12/81b3bf3b.html"/>
+    <id>https://找.fun/2025/02/12/81b3bf3b.html</id>
     <published>2025-02-12T10:43:06.000Z</published>
-    <updated>2025-02-14T02:30:36.473Z</updated>
+    <updated>2025-02-14T03:45:51.696Z</updated>
     
     
       
@@ -36,19 +36,19 @@
     
     
     
-    <category term="学习" scheme="http://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="并行计算" scheme="http://找.fun/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    <category term="并行计算" scheme="https://找.fun/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
     
-    <category term="CS149" scheme="http://找.fun/tags/CS149/"/>
+    <category term="CS149" scheme="https://找.fun/tags/CS149/"/>
     
   </entry>
   
   <entry>
     <title>Parallel Computing (1)</title>
-    <link href="http://找.fun/2025/02/12/aa9eecf8.html"/>
-    <id>http://找.fun/2025/02/12/aa9eecf8.html</id>
+    <link href="https://找.fun/2025/02/12/aa9eecf8.html"/>
+    <id>https://找.fun/2025/02/12/aa9eecf8.html</id>
     <published>2025-02-12T08:19:43.000Z</published>
     <updated>2025-02-12T09:40:10.944Z</updated>
     
@@ -64,19 +64,19 @@
     
     
     
-    <category term="学习" scheme="http://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="并行计算" scheme="http://找.fun/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    <category term="并行计算" scheme="https://找.fun/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
     
-    <category term="CS149" scheme="http://找.fun/tags/CS149/"/>
+    <category term="CS149" scheme="https://找.fun/tags/CS149/"/>
     
   </entry>
   
   <entry>
     <title>智能计算系统第1章-概述</title>
-    <link href="http://找.fun/2025/02/11/4cc7c60c.html"/>
-    <id>http://找.fun/2025/02/11/4cc7c60c.html</id>
+    <link href="https://找.fun/2025/02/11/4cc7c60c.html"/>
+    <id>https://找.fun/2025/02/11/4cc7c60c.html</id>
     <published>2025-02-11T08:54:58.968Z</published>
     <updated>2025-02-11T10:20:10.831Z</updated>
     
@@ -91,19 +91,19 @@
     
     
     
-    <category term="学习" scheme="http://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="AI" scheme="http://找.fun/tags/AI/"/>
+    <category term="AI" scheme="https://找.fun/tags/AI/"/>
     
-    <category term="系统" scheme="http://找.fun/tags/%E7%B3%BB%E7%BB%9F/"/>
+    <category term="系统" scheme="https://找.fun/tags/%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>missing-semester(3)-vim</title>
-    <link href="http://找.fun/2025/02/09/86d7b9fc.html"/>
-    <id>http://找.fun/2025/02/09/86d7b9fc.html</id>
+    <link href="https://找.fun/2025/02/09/86d7b9fc.html"/>
+    <id>https://找.fun/2025/02/09/86d7b9fc.html</id>
     <published>2025-02-09T15:25:33.000Z</published>
     <updated>2025-02-11T08:26:40.491Z</updated>
     
@@ -119,17 +119,17 @@
     
     
     
-    <category term="学习" scheme="http://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="vim" scheme="http://找.fun/tags/vim/"/>
+    <category term="vim" scheme="https://找.fun/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>missing-semester(2)-shell工具和脚本</title>
-    <link href="http://找.fun/2025/02/08/8d29a533.html"/>
-    <id>http://找.fun/2025/02/08/8d29a533.html</id>
+    <link href="https://找.fun/2025/02/08/8d29a533.html"/>
+    <id>https://找.fun/2025/02/08/8d29a533.html</id>
     <published>2025-02-08T05:35:58.000Z</published>
     <updated>2025-02-10T12:51:02.545Z</updated>
     
@@ -145,17 +145,17 @@
     
     
     
-    <category term="学习" scheme="http://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="shell" scheme="http://找.fun/tags/shell/"/>
+    <category term="shell" scheme="https://找.fun/tags/shell/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://找.fun/2025/02/07/4a17b156.html"/>
-    <id>http://找.fun/2025/02/07/4a17b156.html</id>
+    <link href="https://找.fun/2025/02/07/4a17b156.html"/>
+    <id>https://找.fun/2025/02/07/4a17b156.html</id>
     <published>2025-02-07T11:35:23.000Z</published>
     <updated>2025-02-10T12:51:02.537Z</updated>
     
@@ -170,17 +170,17 @@
     
     
     
-    <category term="其他" scheme="http://找.fun/categories/%E5%85%B6%E4%BB%96/"/>
+    <category term="其他" scheme="https://找.fun/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-    <category term="shell" scheme="http://找.fun/tags/shell/"/>
+    <category term="shell" scheme="https://找.fun/tags/shell/"/>
     
   </entry>
   
   <entry>
     <title>missing-semester(1)-shell</title>
-    <link href="http://找.fun/2025/02/07/fa4b86b9.html"/>
-    <id>http://找.fun/2025/02/07/fa4b86b9.html</id>
+    <link href="https://找.fun/2025/02/07/fa4b86b9.html"/>
+    <id>https://找.fun/2025/02/07/fa4b86b9.html</id>
     <published>2025-02-07T11:35:23.000Z</published>
     <updated>2025-02-10T12:51:02.541Z</updated>
     
@@ -196,10 +196,10 @@
     
     
     
-    <category term="学习" scheme="http://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="shell" scheme="http://找.fun/tags/shell/"/>
+    <category term="shell" scheme="https://找.fun/tags/shell/"/>
     
   </entry>
   
