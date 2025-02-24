@@ -232,13 +232,6 @@
   </url>
   
   <url>
-    <loc>https://找.fun/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2025-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://找.fun/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</loc>
     <lastmod>2025-02-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,6 +240,20 @@
   
   <url>
     <loc>https://找.fun/tags/CS149/</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://找.fun/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2025-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://找.fun/tags/git/</loc>
     <lastmod>2025-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -266,24 +273,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://找.fun/tags/git/</loc>
-    <lastmod>2025-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://找.fun/categories/%E5%85%B6%E4%BB%96/</loc>
+    <loc>https://找.fun/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://找.fun/categories/%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://找.fun/categories/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2025-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -6,7 +6,7 @@
   <link href="https://找.fun/atom.xml" rel="self"/>
   
   <link href="https://找.fun/"/>
-  <updated>2025-02-24T07:55:01.243Z</updated>
+  <updated>2025-02-24T07:57:13.525Z</updated>
   <id>https://找.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://找.fun/2025/02/23/3abf91a1.html"/>
     <id>https://找.fun/2025/02/23/3abf91a1.html</id>
     <published>2025-02-23T13:59:06.000Z</published>
-    <updated>2025-02-24T07:55:01.243Z</updated>
+    <updated>2025-02-24T07:57:13.525Z</updated>
     
     
       
@@ -48,7 +48,7 @@
     <link href="https://找.fun/2025/02/23/1192c262.html"/>
     <id>https://找.fun/2025/02/23/1192c262.html</id>
     <published>2025-02-23T13:13:04.000Z</published>
-    <updated>2025-02-24T07:55:32.432Z</updated>
+    <updated>2025-02-24T07:57:53.232Z</updated>
     
     
       
@@ -231,31 +231,6 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://找.fun/2025/02/07/4a17b156.html"/>
-    <id>https://找.fun/2025/02/07/4a17b156.html</id>
-    <published>2025-02-07T11:35:23.000Z</published>
-    <updated>2025-02-10T12:51:02.537Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="其他" scheme="https://找.fun/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="shell" scheme="https://找.fun/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
     <title>missing-semester(1)-shell</title>
     <link href="https://找.fun/2025/02/07/fa4b86b9.html"/>
     <id>https://找.fun/2025/02/07/fa4b86b9.html</id>
@@ -275,6 +250,31 @@
     
     
     <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="shell" scheme="https://找.fun/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://找.fun/2025/02/07/4a17b156.html"/>
+    <id>https://找.fun/2025/02/07/4a17b156.html</id>
+    <published>2025-02-07T11:35:23.000Z</published>
+    <updated>2025-02-10T12:51:02.537Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="其他" scheme="https://找.fun/categories/%E5%85%B6%E4%BB%96/"/>
     
     
     <category term="shell" scheme="https://找.fun/tags/shell/"/>
