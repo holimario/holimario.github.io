@@ -6,7 +6,7 @@
   <link href="https://找.fun/atom.xml" rel="self"/>
   
   <link href="https://找.fun/"/>
-  <updated>2025-03-06T07:05:02.178Z</updated>
+  <updated>2025-03-18T11:54:36.383Z</updated>
   <id>https://找.fun/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随机微分方程与fokker-plank方程</title>
+    <link href="https://找.fun/2025/03/18/a872bcc1.html"/>
+    <id>https://找.fun/2025/03/18/a872bcc1.html</id>
+    <published>2025-03-18T07:27:52.000Z</published>
+    <updated>2025-03-18T11:54:36.383Z</updated>
+    
+    
+    
+    
+    <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="生成式模型" scheme="https://找.fun/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DDPM与DDIM</title>
+    <link href="https://找.fun/2025/03/18/1f1ed4e9.html"/>
+    <id>https://找.fun/2025/03/18/1f1ed4e9.html</id>
+    <published>2025-03-18T07:27:17.000Z</published>
+    <updated>2025-03-18T13:29:03.895Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文参考&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="学习" scheme="https://找.fun/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="生成式模型" scheme="https://找.fun/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>优化器总结</title>
