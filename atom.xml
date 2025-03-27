@@ -42,18 +42,18 @@
   </entry>
   
   <entry>
-    <title>扩散模型的score-based模型视角与fokker-plank方程</title>
+    <title>扩散模型的SDE、ODE视角以及Fokker-Planck方程</title>
     <link href="https://找.fun/2025/03/18/a872bcc1.html"/>
     <id>https://找.fun/2025/03/18/a872bcc1.html</id>
     <published>2025-03-18T07:27:52.000Z</published>
-    <updated>2025-03-27T08:13:57.360Z</updated>
+    <updated>2025-03-27T12:23:14.926Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;本文参考“Tutorial on Diffusion Models for Imaging and Vision”【&lt;strong&gt;原文中对DSM的${&#92;bf x}’$替换为${&#92;bf</summary>
+    <summary type="html">&lt;p&gt;本文参考《Tutorial on Diffusion Models for Imaging and Vision》【&lt;strong&gt;该文中对DSM的${&#92;bf x}’$替换为${&#92;bf</summary>
         
       
     
