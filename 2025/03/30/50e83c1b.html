@@ -1,0 +1,581 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>随机微分方程理论 | Holi Blog</title><meta name="keywords" content="数学理论"><meta name="author" content="Holi"><meta name="copyright" content="Holi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="随机微分方程理论"><meta name="application-name" content="随机微分方程理论"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="随机微分方程理论"><meta property="og:url" content="https://找.fun/2025/03/30/50e83c1b.html"><meta property="og:site_name" content="Holi Blog"><meta property="og:description" content="在阅读有关扩散模型、扩散桥模型的相关理论论文的时候，深感学习随机微分方程相关理论的重要性，因此参考北大刘勇老师的《应用随机分析》的讲义以及Simo Särkkä与Arno Solin的《Applied Stochastic Differential Equations》【这本书没有介绍一些随机过程中"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://找.fun/featureimages/8.jpg"><meta property="article:author" content="Holi"><meta property="article:tag" content=""><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://找.fun/featureimages/8.jpg"><meta name="description" content="在阅读有关扩散模型、扩散桥模型的相关理论论文的时候，深感学习随机微分方程相关理论的重要性，因此参考北大刘勇老师的《应用随机分析》的讲义以及Simo Särkkä与Arno Solin的《Applied Stochastic Differential Equations》【这本书没有介绍一些随机过程中"><link rel="shortcut icon" href="/others/logo.png"><link rel="canonical" href="https://找.fun/2025/03/30/50e83c1b.html"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="codeva-fgCV9FfPPK"/><meta name="algolia-site-verification" content="781DD500525136FB"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d0cc69e7927ccf53839d98a05a49d4b3";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-P0VW44P7JK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-P0VW44P7JK');
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"/others/people.png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: {"enable":true,"ck":"3LCmeNWgwA3XAqrM","LingQueMonitorID":"3LCms02mgSiBVLRM"},
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🔍 专业精神病人"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Holi","link":"链接: ","source":"来源: Holi Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Holi Blog',
+  title: '随机微分方程理论',
+  postAI: '',
+  pageFillDescription: '维纳过程性质解析, It$\hat o$积分与SDE, Kolmogorov方程, Kolmogorov向前方程, Kolmogorov向后方程, Lamperti Transform, Girsanov Theorem, Doob’s h transform在阅读有关扩散模型扩散桥模型的相关理论论文的时候深感学习随机微分方程相关理论的重要性因此参考北大刘勇老师的应用随机分析的讲义以及与的这本书没有介绍一些随机过程中的基础概念而是直接切入到了因此很多地方的叙述不太完整很多等号实际上是均方极限但是对于快速想要入门的人还是挺有帮助的撰写此文待补全基础概率论公设待补全求解维纳过程性质解析待补充积分与对于一个很多时候我们希望求解其分布特性但是现实是我们无法直接对进行常规的积分来得到对该分布的估计这时候就需要积分了也被称为伊藤积分对于如下形式的通用其中为零均值白高斯过程自相关函数为狄拉克函数也就是如果只关注某个时刻的方差那么该方差为无穷要注意的是其并非维纳过程这要和此前的博文相区分常用的积分手段不可行的一个重要原因就是白噪声的不连续性而不是其随机性即使给定一个确定的白噪声的实现其不连续性仍然无法处理下面我们开始积分看到等式右侧的第二项它就是问题的来源不是连续的在黎曼积分中其应该被定义为其中并且假如是连续的那么我们就比较容易确定出该黎曼积分的上界和下界通过证明上界和下界的值相同这样黎曼积分的值就有意义了但可惜的是既不是有界的也不是随时间连续的或许我们也可以尝试积分一种比黎曼积分更通用的积分形式在该情形下我们认为是另一个过程的增量那么实际上就是连续随机过程布朗运动过程其满足如下性质任何增量都是零均值高斯分布且方差矩阵为不交叠的两个增量彼此独立初值为零通过这三个性质我们可以进一步推导得到各处不可微分白噪声可以被视为但是可以看到积分任然面临类似的积分问题其中并且该积分要求极限结果与位置选取独立但是对于存在布朗运动的本身的变化不可忽略情况并非如此此处有待进一步分析而随机积分则比较好地处理了这些问题其核心的一个观察是如果我们将确定下来令那么积分形式变为这个极限就变为唯一了此处我参考的文献没有给出具体说明有待进一步思考这样我们就可以求解积分也可以写为微分形式考虑如下的随机过程积分这里用到了均方极限这个概念有待补充上述随机过程积分可以写为伊藤公式设为伊藤过程即其中的维纳过程项的伊藤积分存在那么考虑一个关于的任意标量函数的伊藤微分也就是的伊藤为在使用时常用到关系通过适当地构造可以将原本的转变为易于求解的形式从而得到的分布形式方程向前方程也被称为方程第二方程可以用于求解前向转移概率密度函数对于一维那么其正向转移密度函数是如下偏微分方程的基本解其中方程是非条件概率的向前方程对于多维形式的其向前方程为也可以写为算子表示的形式更加简洁中给出的形式向后方程也被称为第一方程可以用于求解反向转移概率密度函数对于一维那么其反向转移密度函数是如下偏微分方程的基本解其中对于多维形式的其向后方程为也可以写为算子表示的形式更加简洁中给出的形式假如给定一个如下形式的可以通过将其变换为如下形式即将噪声项前与相关的项转移到微分前这一操作在进行数值模拟运算的时候很有帮助因为对于加性的噪声处理会比较方便首先考虑一个标量形式那么可以定义如下的变换形式其中为任意点那么采用公式到上可以得到假如存在那么我们就可以构造出希望将原本的概率分布转变为另一个概率分布可以通过该定理进行测度变换使得仅改变中的漂移项系数而不改变扩散项前的方差系数有待进一步补充定义为的状态转移密度定义函数满足如下的时空正则特性那么我们现在可以定义另一个马尔可夫过程由于满足时空正则特性可以保证上述等式中的积分为通用生成器对于其具有通用生成器下箭头表示单调递减收敛于特别的对于如下其生成器满足如下形式我们可以验证',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-04-01 11:28:55',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Holi Blog" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/others/logo.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="其他博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="其他博客"/><span class="back-menu-item-text">其他博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="图床"/><span class="back-menu-item-text">图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">Holi Blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/reward/wechat.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="/reward/wechat.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/reward/alipay.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="/reward/alipay.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/AI/" style="font-size: 1.05rem;">AI<sup>1</sup></a><a href="/tags/CS149/" style="font-size: 1.05rem;">CS149<sup>2</sup></a><a href="/tags/git/" style="font-size: 1.05rem;">git<sup>3</sup></a><a href="/tags/shell/" style="font-size: 1.05rem;">shell<sup>3</sup></a><a href="/tags/vim/" style="font-size: 1.05rem;">vim<sup>1</sup></a><a href="/tags/%E4%BC%98%E5%8C%96%E5%99%A8/" style="font-size: 1.05rem;">优化器<sup>1</sup></a><a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 1.05rem;">并行计算<sup>2</sup></a><a href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">强化学习<sup>1</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%90%86%E8%AE%BA/" style="font-size: 1.05rem;">数学理论<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">生成式模型<sup>5</sup></a><a href="/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">系统<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">三月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url">学习</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%95%B0%E5%AD%A6%E7%90%86%E8%AE%BA/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>数学理论</span></a></span></div></div><h1 class="post-title" itemprop="name headline">随机微分方程理论</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="post-meta-icon anzhiyufont anzhiyu-icon-calendar-days"></i><span class="post-meta-label">发表于</span><time itemprop="dateCreated datePublished" datetime="2025-03-30T04:15:36.000Z" title="发表于 2025-03-30 12:15:36">2025-03-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">2.9k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="随机微分方程理论"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/featureimages/8.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://找.fun/2025/03/30/50e83c1b.html"><header><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url">学习</a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%90%86%E8%AE%BA/" tabindex="-1" itemprop="url">数学理论</a><h1 id="CrawlerTitle" itemprop="name headline">随机微分方程理论</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Holi</span><time itemprop="dateCreated datePublished" datetime="2025-03-30T04:15:36.000Z" title="undefined 2025-03-30 12:15:36">2025-03-30</time></header><p>在阅读有关扩散模型、扩散桥模型的相关理论论文的时候，深感学习随机微分方程相关理论的重要性，因此参考北大刘勇老师的《应用随机分析》的讲义以及Simo Särkkä与Arno Solin的《Applied Stochastic Differential Equations》【这本书没有介绍一些随机过程中的基础概念，而是直接切入到了SDE，因此很多地方的叙述不太完整，很多等号实际上是均方极限，但是对于快速想要入门的人还是挺有帮助的】撰写此文。</p>
+<p>【待补全：基础概率论公设】</p>
+<p>【待补全：ODE求解】</p>
+<h2 id="维纳过程性质解析"><a href="#维纳过程性质解析" class="headerlink" title="维纳过程性质解析"></a>维纳过程性质解析</h2><p>【待补充】</p>
+<h2 id="It-hat-o-积分与SDE"><a href="#It-hat-o-积分与SDE" class="headerlink" title="It$\hat o$积分与SDE"></a>It$\hat o$积分与SDE</h2><p>对于一个SDE，很多时候我们希望求解其分布特性，但是现实是我们无法直接对SDE进行常规的积分来得到对该分布的估计，这时候就需要It$\hat o$积分了(也被称为伊藤积分)。</p>
+<p>对于如下形式的通用SDE【<strong>其中${\bf w}(t)$为零均值白高斯过程，自相关函数为狄拉克函数，也就是如果只关注某个时刻的方差，那么该方差为无穷，要注意的是其并非维纳过程，这要和此前的博文相区分</strong>】</p>
+<script type="math/tex; mode=display">
+\frac{d\bf x}{dt}={\bf f}({\bf x},t)+{\bf L}({\bf x},t){\bf w}(t)</script><p>常用的积分手段不可行的一个重要原因就是白噪声的不连续性(而不是其随机性)，即使给定一个确定的白噪声的实现，其不连续性仍然无法处理。下面我们开始积分</p>
+<script type="math/tex; mode=display">
+{\bf x}(t)-{\bf x}(t_0)=\int_{t_0}^t{\bf f}({\bf x}(t),t)dt+\int_{t_0}^t{\bf L}({\bf x}(t),t){\bf w}(t)dt</script><p>看到等式右侧的第二项，它就是问题的来源，${\bf w}(t)$不是连续的！在黎曼积分中，其应该被定义为</p>
+<script type="math/tex; mode=display">
+\int_{t_0}^t{\bf L}({\bf x}(t),t){\bf w}(t)dt=\lim_{n\to\infty}\sum_k{\bf L}({\bf x}(t_k^*),t_k^*){\bf w}(t_k^*)(t_{k+1}-t_k)</script><p>其中$t_0&lt;t_1&lt;…&lt;t_n$并且$t_k^*\in[t_k,t_{k+1}]$。假如${\bf w}(t)$是连续的，那么我们就比较容易确定出该黎曼积分的上界和下界，通过证明上界和下界的值相同，这样黎曼积分的值就有意义了，但可惜的是${\bf w}(t)$既不是有界的，也不是随时间连续的。</p>
+<p>或许我们也可以尝试Stieltjes积分(一种比黎曼积分更通用的积分形式)，在该情形下，我们认为${\bf w}(t)dt$是另一个过程${\mathbf\beta}(t)$的增量，那么</p>
+<script type="math/tex; mode=display">
+\int_{t_0}^t{\bf L}({\bf x}(t),t){\bf w}(t)dt=\int_{t_0}^t{\bf L}({\bf x}(t),t)d\beta(t)</script><p>实际上$\beta(t)\in\mathbb{R}^S$就是(连续随机过程)布朗运动过程，其满足如下性质</p>
+<ol>
+<li>任何增量$\Delta\beta_k=\beta(t_{k+1})-\beta(t_k)$都是零均值高斯分布，且方差矩阵为${\bf Q}(t_{k+1}-t_k)$</li>
+<li>不交叠的两个增量彼此独立</li>
+<li>初值为零</li>
+</ol>
+<p>通过这三个性质，我们可以进一步推导得到</p>
+<ol>
+<li>$\beta(t)$各处不可微分</li>
+<li>白噪声${\bf w}(t)$可以被视为$\frac{d\beta(t)}{dt}$</li>
+</ol>
+<p>但是可以看到Stieltjes积分任然面临类似的积分问题</p>
+<script type="math/tex; mode=display">
+\int_{t_0}^t{\bf L}({\bf x}(t),t)d\beta=\lim_{n\to\infty}\sum_k{\bf L}({\bf x}(t_k^*),t_k^*)[\beta(t_{k+1})-\beta(t_k)]</script><p>其中$t_0&lt;t_1&lt;…&lt;t_n$并且$t_k^<em>\in[t_k,t_{k+1}]$。该积分要求极限结果与$t_k^</em>$位置选取独立，但是对于存在布朗运动的SDE(${\bf x}(t)$本身的变化不可忽略)，情况并非如此【<strong>此处有待进一步分析</strong>】。</p>
+<p>而It$\hat o$随机积分则比较好地处理了这些问题。其核心的一个观察是，如果我们将$t_k^<em>$确定下来，令$t_k^</em>=t_k$，那么积分形式变为</p>
+<script type="math/tex; mode=display">
+\int_{t_0}^t{\bf L}({\bf x}(t),t)d\beta=\lim_{n\to\infty}\sum_k{\bf L}({\bf x}(t_k),t_k)[\beta(t_{k+1})-\beta(t_k)]</script><p>这个极限就变为唯一了【<strong>此处我参考的文献没有给出具体说明，有待进一步思考</strong>】，这样我们就可以求解积分</p>
+<script type="math/tex; mode=display">
+{\bf x}(t)-{\bf x}(t_0)=\int_{t_0}^t{\bf f}({\bf x}(t),t)dt+\int_{t_0}^t{\bf L}({\bf x}(t),t)d\beta(t)</script><p>也可以写为微分形式</p>
+<script type="math/tex; mode=display">
+d{\bf x}={\bf f}({\bf x},t)dt+{\bf L}({\bf x},t)d{\bf \beta}(t)</script><blockquote>
+<p> 考虑如下的随机过程积分</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\int_0^t\beta(t)d\beta(t)\\
+=\lim_{n\to\infty}\sum_k\beta(t_k)[\beta(t_{k+1})-\beta(t_k)]\\
+=\lim_{n\to\infty}\sum_k\left[-\frac{1}{2}(\beta(t_{k+1})-\beta(t_k))^2+\frac{1}{2}(\beta^2(t_{k+1})-\beta^2(t_k))\right]\\
+=-\frac{1}{2}t+\frac{1}{2}\beta^2(t)
+\end{align}</script><p>这里用到了<strong>均方极限</strong>【这个概念有待补充】</p>
+<script type="math/tex; mode=display">
+\mathbb{E}\left(\lim_{n\to\infty}\sum_k((\beta(t_{k+1})-\beta(t_k))^2)-t\right)^2=0</script><p>上述随机过程积分可以写为</p>
+<script type="math/tex; mode=display">
+d\left[\frac{1}{2}\beta^2(t)\right]=\beta(t)d\beta(t)+\frac{1}{2}dt</script></blockquote>
+<p><strong>伊藤公式</strong>：设${\bf x}(t)$为伊藤过程(<strong>即其SDE中的维纳过程项的伊藤积分存在</strong>)，那么考虑一个关于${\bf x}(t)$的任意标量函数$\phi({\bf x}(t),t)$，$\phi$的伊藤微分，也就是$\phi$的伊藤SDE为</p>
+<script type="math/tex; mode=display">
+\begin{align}
+d\phi=\frac{\partial \phi}{\partial t}dt+\sum_i\frac{\partial\phi}{\partial x_i}dx_i+\frac{1}{2}\sum_{i,j}\left(\frac{\partial^2\phi}{\partial x_i\partial x_j}\right)dx_idx_j\\
+=\frac{\partial\phi}{\partial t}dt+(\nabla\phi)^Td{\bf x}+\frac{1}{2}\tr\{(\nabla\nabla^T\phi)d{\bf x}d{\bf x}^T\}
+\end{align}</script><p>【在使用时，常用到关系$d\beta dt={\bf 0}$，$dtd\beta={\bf 0}$，$d\beta d\beta^T={\bf Q}dt$】</p>
+<p>通过适当地构造$\phi$，可以将原本的SDE转变为易于求解的形式，从而得到${\bf x}_t$的分布形式。</p>
+<h2 id="Kolmogorov方程"><a href="#Kolmogorov方程" class="headerlink" title="Kolmogorov方程"></a>Kolmogorov方程</h2><h3 id="Kolmogorov向前方程"><a href="#Kolmogorov向前方程" class="headerlink" title="Kolmogorov向前方程"></a>Kolmogorov向前方程</h3><p>也被称为Fokker-Planck方程、Kolmogorov第二方程，可以用于求解前向转移概率密度函数。</p>
+<p>对于一维SDE</p>
+<script type="math/tex; mode=display">
+d\xi_t=b(t,\xi_t)dt+\sigma(t,\xi_t)dB_t</script><p>那么其正向转移密度函数是如下偏微分方程的基本解</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial t}p(x(t)|y(s))=\frac{1}{2}\frac{\partial^2}{\partial x^2}(\sigma(x(t))^2p(x(t)|y(s)))-\frac{\partial}{\partial x}(b(x(t))p(x(t)|y(s)))</script><p>【其中$s&lt;t$】</p>
+<p>Fokker-Planck方程是非条件概率的Kolmogorov向前方程。</p>
+<p>对于多维形式的SDE</p>
+<script type="math/tex; mode=display">
+d\xi_t={\bf b}(t,\xi_t)dt+{\bf\Sigma}(t,\xi_t)dB_t</script><p>其向前方程为</p>
+<script type="math/tex; mode=display">
+\frac{\partial p({\bf x}(t)|{\bf y}(s))}{\partial t}=\frac{1}{2}\sum_{i,j=1}^d\frac{\partial^2}{\partial x_i\partial x_j}\left[\sum_{k=1}^d{\bf\Sigma}_{ik}(t,{\bf x}(t)){\bf\Sigma}_{jk}(t,{\bf x}(t))p({\bf x}(t),t)\right]-\sum_{i=1}^d\frac{\partial}{\partial x_i}\left[b_i(t,{\bf x}(t))p({\bf x}(t)|{\bf y}(s))\right]</script><p>也可以写为$\nabla$算子表示的形式，更加简洁【DDBM中给出的形式】</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial t}p({\bf x}_t|{\bf x}_s)=-\nabla_{ {\bf x}_t}\cdot\left[{\bf b}(t,{\bf x}_t)p({\bf x}_t|{\bf x}_s)\right]+\frac{1}{2}\nabla\cdot\left(\nabla\cdot\left[{\bf\Sigma}(t,{\bf x}_t){\bf\Sigma}(t,{\bf x}_t)^Tp({\bf x}_t|{\bf x}_s)\right]\right)</script><h3 id="Kolmogorov向后方程"><a href="#Kolmogorov向后方程" class="headerlink" title="Kolmogorov向后方程"></a>Kolmogorov向后方程</h3><p>也被称为Kolmogorov第一方程，可以用于求解反向转移概率密度函数。</p>
+<p>对于一维SDE</p>
+<script type="math/tex; mode=display">
+d\xi_t=b(t,\xi_t)dt+\sigma(t,\xi_t)dB_t</script><p>那么其反向转移密度函数是如下偏微分方程的基本解</p>
+<script type="math/tex; mode=display">
+-\frac{\partial}{\partial t}p(x(t)|y(s))=\frac{1}{2}\frac{\partial^2}{\partial x^2}(\sigma(y(s))^2p(x(t)|y(s)))+\frac{\partial}{\partial x}(b(y(s))p(x(t)|y(s)))</script><p>【其中$s&gt;t$】</p>
+<p>对于多维形式的SDE</p>
+<script type="math/tex; mode=display">
+d\xi_t={\bf b}(t,\xi_t)dt+{\bf\Sigma}(t,\xi_t)dB_t</script><p>其向后方程为</p>
+<script type="math/tex; mode=display">
+-\frac{\partial p({\bf x}(t)|{\bf y}(s))}{\partial t}=\frac{1}{2}\sum_{i,j=1}^d\frac{\partial^2}{\partial x_i\partial x_j}\left[\sum_{k=1}^d{\bf\Sigma}_{ik}(t,{\bf x}(t)){\bf\Sigma}_{jk}(t,{\bf x}(t))p({\bf x}(t),t)\right]-\sum_{i=1}^d\frac{\partial}{\partial x_i}\left[b_i(t,{\bf x}(t))p({\bf x}(t)|{\bf y}(s))\right]</script><p>也可以写为$\nabla$算子表示的形式，更加简洁【DDBM中给出的形式】</p>
+<script type="math/tex; mode=display">
+-\frac{\partial}{\partial t}p({\bf x}_s|{\bf x}_t)=-\nabla_{ {\bf x}_t}\cdot\left[{\bf b}(t,{\bf x}_t)p({\bf x}_t|{\bf x}_s)\right]+\frac{1}{2}\nabla\cdot\left(\nabla\cdot\left[{\bf\Sigma}(t,{\bf x}_t){\bf\Sigma}(t,{\bf x}_t)^Tp({\bf x}_t|{\bf x}_s)\right]\right)</script><h2 id="Lamperti-Transform"><a href="#Lamperti-Transform" class="headerlink" title="Lamperti Transform"></a>Lamperti Transform</h2><p>假如给定一个如下形式的SDE</p>
+<script type="math/tex; mode=display">
+d{\bf x}={\bf f}({\bf x},t)dt+{\bf L}({\bf x},t)d\beta</script><p>可以通过Lamperti Transform，将其变换为如下形式</p>
+<script type="math/tex; mode=display">
+d{\bf y}={\bf g}({\bf y},t)dt+d\beta</script><p>即将噪声项前与${\bf L}({\bf x},t)$相关的项转移到$dt$微分前，这一操作在进行数值模拟运算的时候很有帮助，因为对于加性的噪声，处理会比较方便。</p>
+<p>首先考虑一个标量形式</p>
+<script type="math/tex; mode=display">
+dx=f(x,t)dt+L(x,t)d\beta</script><p>那么可以定义如下的变换形式</p>
+<script type="math/tex; mode=display">
+y=h(x,t)+\int_\xi^t\frac{1}{L(u,t)}du</script><p>其中$\xi$为任意点。那么采用It$\hat o$公式到$h$上，可以得到</p>
+<script type="math/tex; mode=display">
+\begin{align}
+dy=\frac{\partial h(x,t)}{\partial t}dt+\left(\frac{1}{L(x,t)}\right)dx+\frac{1}{2}\left(-\frac{\partial L(x,t)/\partial x}{L^2(x,t)}\right)dx^2\\
+=\left[\frac{\partial }{\partial t}\int_\xi^x\frac{1}{L(u,t)}du\right]dt+\left(\frac{1}{L(x,t)}\right)(f(x,t)dt+L(x,t)d\beta)+\frac{1}{2}\left(-\frac{\partial L(x,t)/\partial x}{L^2(x,t)}\right)L^2(x,t)dt\\
+=\left(\frac{\partial}{\partial t}\int_\xi^x\frac{1}{L(u,t)}du+\frac{f(x,t)}{L(x,t)}-\frac{1}{2}\frac{\partial L(x,t)}{\partial x}\right)dt+d\beta
+\end{align}</script><p>假如$x=h^{-1}(y,t)$存在，那么我们就可以构造出</p>
+<script type="math/tex; mode=display">
+g(y,t)=\left(\frac{\partial}{\partial t}\int_\xi^x\frac{1}{L(u,t)}du+\frac{f(x,t)}{L(x,t)}-\frac{1}{2}\frac{\partial L(x,t)}{\partial x}\right)\Big|_{x=h^{-1}(y,t)}</script><h2 id="Girsanov-Theorem"><a href="#Girsanov-Theorem" class="headerlink" title="Girsanov Theorem"></a>Girsanov Theorem</h2><p>希望将原本的概率分布转变为另一个概率分布，可以通过该定理进行测度变换，使得仅改变SDE中的漂移项系数，而不改变扩散项前的方差系数。【有待进一步补充】</p>
+<h2 id="Doob’s-h-transform"><a href="#Doob’s-h-transform" class="headerlink" title="Doob’s h transform"></a>Doob’s h transform</h2><p>定义$p({\bf y},t’|{\bf x},t):=p({\bf y}(t’)|{\bf x}(t))$为SDE的状态转移密度。定义函数$h(t,{\bf x})$满足如下的时空正则特性</p>
+<script type="math/tex; mode=display">
+h(t,{\bf x})=\int p({\bf y},t+s|{\bf x},t)h(t+s,{\bf y})d{\bf y}</script><p>那么我们现在可以定义另一个马尔可夫过程$p^h({\bf y},t’|{\bf x},t):=p({\bf y}(t’)|{\bf x}(t))$</p>
+<script type="math/tex; mode=display">
+p^h({\bf y},t+s|{\bf x},t)=p({\bf y},t+s|{\bf x},t)\frac{h(t+s,{\bf y})}{h(t,{\bf x})}</script><p>由于$h$满足时空正则特性，可以保证上述等式中$p^h({\bf y},t+s|{\bf x},t)$的积分为$1$。</p>
+<blockquote>
+<p><strong>通用生成器</strong>：对于$\phi({\bf x},t)$，其具有通用生成器</p>
+<script type="math/tex; mode=display">
+\mathcal{A}_t\phi({\bf x},t)=\lim_{s\downarrow 0}\frac{\mathbb{E}[\phi({\bf x}(t+s),t+s)]-\phi({\bf x}(t),t)}{s}</script><p>【下箭头表示单调递减收敛于】</p>
+<p>特别的，对于如下SDE</p>
+<script type="math/tex; mode=display">
+d{\bf x}={\bf f}({\bf x},t)dt+{\bf L}({\bf x},t)d\beta</script><p>其生成器满足如下形式</p>
+<script type="math/tex; mode=display">
+\mathcal{A}_t(\cdot)=\frac{\partial(\cdot)}{\partial t}+\sum_i\frac{\partial (\cdot)}{\partial x_i}f_i({\bf x},t)+\frac{1}{2}\sum_{i,j}\left(\frac{\partial^2(\cdot)}{\partial x_i\partial x_j}\right)[{\bf L}({\bf x},t){\bf Q}{\bf L}^T({\bf x},t)]_{ij}</script></blockquote>
+<p>我们可以验证</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\mathcal{A}_t h\\
+=\lim_{s\downarrow 0}\frac{\mathbb{E}[h(t+s,{\bf x}(t+s))]-h(t,{\bf x}(t))}{s}\\
+=\lim_{s\downarrow 0}\frac{\mathbb{E}_{\bf x}[\int p({\bf y},t+s'|{\bf x},t+s)h(t+s',{\bf y})d{\bf y}]-h(t,{\bf x}(t))}{s}\\
+=\lim_{s\downarrow 0}\frac{\mathbb{E}_{\bf x}[\int p({\bf y},t+s'|{\bf x},t+s)h(t+s',{\bf y})d{\bf y}]-h(t,{\bf x}(t))}{s}
+\end{align}</script></article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/others/logo.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/others/logo.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">Holi</div><div class="post-copyright__author_desc">(0`_`0)</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://找.fun/2025/03/30/50e83c1b.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://找.fun/2025/03/30/50e83c1b.html')">随机微分方程理论</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/reward/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/reward/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/reward/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/reward/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://找.fun/2025/03/30/50e83c1b.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=随机微分方程理论&amp;url=https://找.fun/2025/03/30/50e83c1b.html&amp;pic=/featureimages/8.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://找.fun" target="_blank">Holi Blog</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E6%95%B0%E5%AD%A6%E7%90%86%E8%AE%BA/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>数学理论<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="/featureimages/2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/03/29/b88744a.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/featureimages/4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">扩散桥</div></div></a></div><div class="next-post pull-right"><a href="/2025/03/31/99a5c2ac.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/featureimages/2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">DDBM与DBIM</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/others/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description">(0^_^0)</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Holi</h1><div class="author-info__desc">(0`_`0)</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/holimario" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%B4%E7%BA%B3%E8%BF%87%E7%A8%8B%E6%80%A7%E8%B4%A8%E8%A7%A3%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">维纳过程性质解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#It-hat-o-%E7%A7%AF%E5%88%86%E4%B8%8ESDE"><span class="toc-number">2.</span> <span class="toc-text">It$\hat o$积分与SDE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kolmogorov%E6%96%B9%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">Kolmogorov方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kolmogorov%E5%90%91%E5%89%8D%E6%96%B9%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">Kolmogorov向前方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kolmogorov%E5%90%91%E5%90%8E%E6%96%B9%E7%A8%8B"><span class="toc-number">3.2.</span> <span class="toc-text">Kolmogorov向后方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lamperti-Transform"><span class="toc-number">4.</span> <span class="toc-text">Lamperti Transform</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Girsanov-Theorem"><span class="toc-number">5.</span> <span class="toc-text">Girsanov Theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Doob%E2%80%99s-h-transform"><span class="toc-number">6.</span> <span class="toc-text">Doob’s h transform</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/31/99a5c2ac.html" title="DDBM与DBIM"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/featureimages/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DDBM与DBIM"/></a><div class="content"><a class="title" href="/2025/03/31/99a5c2ac.html" title="DDBM与DBIM">DDBM与DBIM</a><time datetime="2025-03-31T06:42:53.000Z" title="发表于 2025-03-31 14:42:53">2025-03-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/30/50e83c1b.html" title="随机微分方程理论"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/featureimages/8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="随机微分方程理论"/></a><div class="content"><a class="title" href="/2025/03/30/50e83c1b.html" title="随机微分方程理论">随机微分方程理论</a><time datetime="2025-03-30T04:15:36.000Z" title="发表于 2025-03-30 12:15:36">2025-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/29/b88744a.html" title="扩散桥"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/featureimages/4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="扩散桥"/></a><div class="content"><a class="title" href="/2025/03/29/b88744a.html" title="扩散桥">扩散桥</a><time datetime="2025-03-29T14:26:56.000Z" title="发表于 2025-03-29 22:26:56">2025-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/29/aad91066.html" title="一致性模型"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/featureimages/0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一致性模型"/></a><div class="content"><a class="title" href="/2025/03/29/aad91066.html" title="一致性模型">一致性模型</a><time datetime="2025-03-29T01:58:17.000Z" title="发表于 2025-03-29 09:58:17">2025-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/20/ba24de2.html" title="Analytic-DPM与DPM-solver"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/featureimages/0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Analytic-DPM与DPM-solver"/></a><div class="content"><a class="title" href="/2025/03/20/ba24de2.html" title="Analytic-DPM与DPM-solver">Analytic-DPM与DPM-solver</a><time datetime="2025-03-20T06:11:59.000Z" title="发表于 2025-03-20 14:11:59">2025-03-20</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:1437273841@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/others/logo.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/holimario" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg" alt="努力！奋斗！" title="努力！奋斗！"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 By <a class="footer-bar-link" href="/" title="Holi" target="_blank">Holi</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="其他博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="其他博客"/><span class="back-menu-item-text">其他博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="图床"/><span class="back-menu-item-text">图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/AI/" style="font-size: 0.88rem;">AI<sup>1</sup></a><a href="/tags/CS149/" style="font-size: 0.88rem;">CS149<sup>2</sup></a><a href="/tags/git/" style="font-size: 0.88rem;">git<sup>3</sup></a><a href="/tags/shell/" style="font-size: 0.88rem;">shell<sup>3</sup></a><a href="/tags/vim/" style="font-size: 0.88rem;">vim<sup>1</sup></a><a href="/tags/%E4%BC%98%E5%8C%96%E5%99%A8/" style="font-size: 0.88rem;">优化器<sup>1</sup></a><a href="/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" style="font-size: 0.88rem;">并行计算<sup>2</sup></a><a href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">强化学习<sup>1</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%90%86%E8%AE%BA/" style="font-size: 0.88rem;">数学理论<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B/" style="font-size: 0.88rem;">生成式模型<sup>5</sup></a><a href="/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">系统<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div class="docsearch-wrap"><div id="docsearch" style="display:none"></div><link rel="stylesheet" href="https://cdn.cbd.int/@docsearch/css@3.5.2/dist/style.css"/><script src="https://cdn.cbd.int/@docsearch/js@3.5.2/dist/umd/index.js"></script><script>(() => {
+  // 初始化 DocSearch
+  const initDocSearch = () => {
+    try {
+      docsearch(Object.assign({
+        appId: 'U1EIE346BD',
+        apiKey: '879451458fd968ffbcbf2ecd477a6bf9',
+        indexName: 'xn--0qu',
+        container: '#search-button',
+      }, null));
+      console.log('DocSearch initialized successfully.');
+      return true;
+    } catch (error) {
+      console.error('DocSearch initialization failed:', error);
+      return false;
+    }
+  };
+
+  // 处理搜索按钮点击事件
+  const handleClick = () => {
+    const docSearchButton = document.querySelector('.DocSearch-Button');
+    if (docSearchButton) {
+      docSearchButton.click();
+    }
+  };
+
+  // 绑定搜索按钮点击事件
+  const bindSearchClick = () => {
+    const searchButton = document.querySelector('#search-button > .search');
+    if (searchButton) {
+      // 移除旧的事件监听器，避免重复绑定
+      anzhiyu.removeEventListenerPjax(searchButton, 'click', handleClick);
+      // 绑定新的事件监听器
+      anzhiyu.addEventListenerPjax(searchButton, 'click', handleClick);
+      console.log('Search button event bound successfully.');
+    } else {
+      console.error('Search button not found.');
+    }
+  };
+
+  // 初始化 DocSearch 并绑定事件
+  const init = () => {
+    let retries = 3; // 重试次数
+    const retryInterval = 500; // 重试间隔时间（毫秒）
+
+    const tryInit = () => {
+      if (initDocSearch()) {
+        bindSearchClick();
+      } else if (retries > 0) {
+        retries--;
+        console.log(`Retrying initialization... Attempts left: ${retries}`);
+        setTimeout(tryInit, retryInterval);
+      } else {
+        console.error('Failed to initialize after multiple attempts.');
+      }
+    };
+
+    tryInit();
+  };
+
+  // 页面加载时初始化
+  init();
+
+  // 在 pjax:complete 时重新初始化
+  window.addEventListener('pjax:complete', init);
+})();</script></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("02/08/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2025 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Holi 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("02/08/2025 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg";
+        img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+        img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'QjKPOEnDIR8SeBq03a6xXcXo-gzGzoHsz',
+      appKey: 'Teyl0bxUm6uXXZyK9CIXTS7z',
+      avatar: 'mp',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

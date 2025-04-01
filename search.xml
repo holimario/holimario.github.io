@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>DDBM与DBIM</title>
+      <link href="/2025/03/31/99a5c2ac.html"/>
+      <url>/2025/03/31/99a5c2ac.html</url>
+      
+        <content type="html"><![CDATA[<p>本文参考《DENOISING DIFFUSION BRIDGE MODELS》与《DIFFUSION BRIDGE IMPLICIT MODELS》。</p><h2 id="DDBM"><a href="#DDBM" class="headerlink" title="DDBM"></a>DDBM</h2><p>DDPM等工作可以实现从噪声空间到数据空间的映射，但是很多情形下我们的输入源头其实是来自数据空间A的数据，希望将其映射到另一个数据空间B，这样的话DDPM的一般需要引入条件来指导从噪声空间到数据空间的映射。DDBM则提出了一种新型的扩散桥模型，可以实现两个数据空间的直接映射，比如将低质量图片映射为高质量图片。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生成式模型 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>随机微分方程理论</title>
+      <link href="/2025/03/30/50e83c1b.html"/>
+      <url>/2025/03/30/50e83c1b.html</url>
+      
+        <content type="html"><![CDATA[<p>在阅读有关扩散模型、扩散桥模型的相关理论论文的时候，深感学习随机微分方程相关理论的重要性，因此参考北大刘勇老师的《应用随机分析》的讲义以及Simo Särkkä与Arno Solin的《Applied Stochastic Differential Equations》【这本书没有介绍一些随机过程中的基础概念，而是直接切入到了SDE，因此很多地方的叙述不太完整，很多等号实际上是均方极限，但是对于快速想要入门的人还是挺有帮助的】撰写此文。</p><p>【待补全：基础概率论公设】</p><p>【待补全：ODE求解】</p><h2 id="维纳过程性质解析"><a href="#维纳过程性质解析" class="headerlink" title="维纳过程性质解析"></a>维纳过程性质解析</h2><p>【待补充】</p><h2 id="It-hat-o-积分与SDE"><a href="#It-hat-o-积分与SDE" class="headerlink" title="It$\hat o$积分与SDE"></a>It$\hat o$积分与SDE</h2><p>对于一个SDE，很多时候我们希望求解其分布特性，但是现实是我们无法直接对SDE进行常规的积分来得到对该分布的估计，这时候就需要It$\hat o$积分了(也被称为伊藤积分)。</p><p>对于如下形式的通用SDE【<strong>其中${\bf w}(t)$为零均值白高斯过程，自相关函数为狄拉克函数，也就是如果只关注某个时刻的方差，那么该方差为无穷，要注意的是其并非维纳过程，这要和此前的博文相区分</strong>】</p><script type="math/tex; mode=display">\frac{d\bf x}{dt}={\bf f}({\bf x},t)+{\bf L}({\bf x},t){\bf w}(t)</script><p>常用的积分手段不可行的一个重要原因就是白噪声的不连续性(而不是其随机性)，即使给定一个确定的白噪声的实现，其不连续性仍然无法处理。下面我们开始积分</p><script type="math/tex; mode=display">{\bf x}(t)-{\bf x}(t_0)=\int_{t_0}^t{\bf f}({\bf x}(t),t)dt+\int_{t_0}^t{\bf L}({\bf x}(t),t){\bf w}(t)dt</script><p>看到等式右侧的第二项，它就是问题的来源，${\bf w}(t)$不是连续的！在黎曼积分中，其应该被定义为</p><script type="math/tex; mode=display">\int_{t_0}^t{\bf L}({\bf x}(t),t){\bf w}(t)dt=\lim_{n\to\infty}\sum_k{\bf L}({\bf x}(t_k^*),t_k^*){\bf w}(t_k^*)(t_{k+1}-t_k)</script><p>其中$t_0&lt;t_1&lt;…&lt;t_n$并且$t_k^*\in[t_k,t_{k+1}]$。假如${\bf w}(t)$是连续的，那么我们就比较容易确定出该黎曼积分的上界和下界，通过证明上界和下界的值相同，这样黎曼积分的值就有意义了，但可惜的是${\bf w}(t)$既不是有界的，也不是随时间连续的。</p><p>或许我们也可以尝试Stieltjes积分(一种比黎曼积分更通用的积分形式)，在该情形下，我们认为${\bf w}(t)dt$是另一个过程${\mathbf\beta}(t)$的增量，那么</p><script type="math/tex; mode=display">\int_{t_0}^t{\bf L}({\bf x}(t),t){\bf w}(t)dt=\int_{t_0}^t{\bf L}({\bf x}(t),t)d\beta(t)</script><p>实际上$\beta(t)\in\mathbb{R}^S$就是(连续随机过程)布朗运动过程，其满足如下性质</p><ol><li>任何增量$\Delta\beta_k=\beta(t_{k+1})-\beta(t_k)$都是零均值高斯分布，且方差矩阵为${\bf Q}(t_{k+1}-t_k)$</li><li>不交叠的两个增量彼此独立</li><li>初值为零</li></ol><p>通过这三个性质，我们可以进一步推导得到</p><ol><li>$\beta(t)$各处不可微分</li><li>白噪声${\bf w}(t)$可以被视为$\frac{d\beta(t)}{dt}$</li></ol><p>但是可以看到Stieltjes积分任然面临类似的积分问题</p><script type="math/tex; mode=display">\int_{t_0}^t{\bf L}({\bf x}(t),t)d\beta=\lim_{n\to\infty}\sum_k{\bf L}({\bf x}(t_k^*),t_k^*)[\beta(t_{k+1})-\beta(t_k)]</script><p>其中$t_0&lt;t_1&lt;…&lt;t_n$并且$t_k^<em>\in[t_k,t_{k+1}]$。该积分要求极限结果与$t_k^</em>$位置选取独立，但是对于存在布朗运动的SDE(${\bf x}(t)$本身的变化不可忽略)，情况并非如此【<strong>此处有待进一步分析</strong>】。</p><p>而It$\hat o$随机积分则比较好地处理了这些问题。其核心的一个观察是，如果我们将$t_k^<em>$确定下来，令$t_k^</em>=t_k$，那么积分形式变为</p><script type="math/tex; mode=display">\int_{t_0}^t{\bf L}({\bf x}(t),t)d\beta=\lim_{n\to\infty}\sum_k{\bf L}({\bf x}(t_k),t_k)[\beta(t_{k+1})-\beta(t_k)]</script><p>这个极限就变为唯一了【<strong>此处我参考的文献没有给出具体说明，有待进一步思考</strong>】，这样我们就可以求解积分</p><script type="math/tex; mode=display">{\bf x}(t)-{\bf x}(t_0)=\int_{t_0}^t{\bf f}({\bf x}(t),t)dt+\int_{t_0}^t{\bf L}({\bf x}(t),t)d\beta(t)</script><p>也可以写为微分形式</p><script type="math/tex; mode=display">d{\bf x}={\bf f}({\bf x},t)dt+{\bf L}({\bf x},t)d{\bf \beta}(t)</script><blockquote><p> 考虑如下的随机过程积分</p><script type="math/tex; mode=display">\begin{align}\int_0^t\beta(t)d\beta(t)\\=\lim_{n\to\infty}\sum_k\beta(t_k)[\beta(t_{k+1})-\beta(t_k)]\\=\lim_{n\to\infty}\sum_k\left[-\frac{1}{2}(\beta(t_{k+1})-\beta(t_k))^2+\frac{1}{2}(\beta^2(t_{k+1})-\beta^2(t_k))\right]\\=-\frac{1}{2}t+\frac{1}{2}\beta^2(t)\end{align}</script><p>这里用到了<strong>均方极限</strong>【这个概念有待补充】</p><script type="math/tex; mode=display">\mathbb{E}\left(\lim_{n\to\infty}\sum_k((\beta(t_{k+1})-\beta(t_k))^2)-t\right)^2=0</script><p>上述随机过程积分可以写为</p><script type="math/tex; mode=display">d\left[\frac{1}{2}\beta^2(t)\right]=\beta(t)d\beta(t)+\frac{1}{2}dt</script></blockquote><p><strong>伊藤公式</strong>：设${\bf x}(t)$为伊藤过程(<strong>即其SDE中的维纳过程项的伊藤积分存在</strong>)，那么考虑一个关于${\bf x}(t)$的任意标量函数$\phi({\bf x}(t),t)$，$\phi$的伊藤微分，也就是$\phi$的伊藤SDE为</p><script type="math/tex; mode=display">\begin{align}d\phi=\frac{\partial \phi}{\partial t}dt+\sum_i\frac{\partial\phi}{\partial x_i}dx_i+\frac{1}{2}\sum_{i,j}\left(\frac{\partial^2\phi}{\partial x_i\partial x_j}\right)dx_idx_j\\=\frac{\partial\phi}{\partial t}dt+(\nabla\phi)^Td{\bf x}+\frac{1}{2}\tr\{(\nabla\nabla^T\phi)d{\bf x}d{\bf x}^T\}\end{align}</script><p>【在使用时，常用到关系$d\beta dt={\bf 0}$，$dtd\beta={\bf 0}$，$d\beta d\beta^T={\bf Q}dt$】</p><p>通过适当地构造$\phi$，可以将原本的SDE转变为易于求解的形式，从而得到${\bf x}_t$的分布形式。</p><h2 id="Kolmogorov方程"><a href="#Kolmogorov方程" class="headerlink" title="Kolmogorov方程"></a>Kolmogorov方程</h2><h3 id="Kolmogorov向前方程"><a href="#Kolmogorov向前方程" class="headerlink" title="Kolmogorov向前方程"></a>Kolmogorov向前方程</h3><p>也被称为Fokker-Planck方程、Kolmogorov第二方程，可以用于求解前向转移概率密度函数。</p><p>对于一维SDE</p><script type="math/tex; mode=display">d\xi_t=b(t,\xi_t)dt+\sigma(t,\xi_t)dB_t</script><p>那么其正向转移密度函数是如下偏微分方程的基本解</p><script type="math/tex; mode=display">\frac{\partial}{\partial t}p(x(t)|y(s))=\frac{1}{2}\frac{\partial^2}{\partial x^2}(\sigma(x(t))^2p(x(t)|y(s)))-\frac{\partial}{\partial x}(b(x(t))p(x(t)|y(s)))</script><p>【其中$s&lt;t$】</p><p>Fokker-Planck方程是非条件概率的Kolmogorov向前方程。</p><p>对于多维形式的SDE</p><script type="math/tex; mode=display">d\xi_t={\bf b}(t,\xi_t)dt+{\bf\Sigma}(t,\xi_t)dB_t</script><p>其向前方程为</p><script type="math/tex; mode=display">\frac{\partial p({\bf x}(t)|{\bf y}(s))}{\partial t}=\frac{1}{2}\sum_{i,j=1}^d\frac{\partial^2}{\partial x_i\partial x_j}\left[\sum_{k=1}^d{\bf\Sigma}_{ik}(t,{\bf x}(t)){\bf\Sigma}_{jk}(t,{\bf x}(t))p({\bf x}(t),t)\right]-\sum_{i=1}^d\frac{\partial}{\partial x_i}\left[b_i(t,{\bf x}(t))p({\bf x}(t)|{\bf y}(s))\right]</script><p>也可以写为$\nabla$算子表示的形式，更加简洁【DDBM中给出的形式】</p><script type="math/tex; mode=display">\frac{\partial}{\partial t}p({\bf x}_t|{\bf x}_s)=-\nabla_{ {\bf x}_t}\cdot\left[{\bf b}(t,{\bf x}_t)p({\bf x}_t|{\bf x}_s)\right]+\frac{1}{2}\nabla\cdot\left(\nabla\cdot\left[{\bf\Sigma}(t,{\bf x}_t){\bf\Sigma}(t,{\bf x}_t)^Tp({\bf x}_t|{\bf x}_s)\right]\right)</script><h3 id="Kolmogorov向后方程"><a href="#Kolmogorov向后方程" class="headerlink" title="Kolmogorov向后方程"></a>Kolmogorov向后方程</h3><p>也被称为Kolmogorov第一方程，可以用于求解反向转移概率密度函数。</p><p>对于一维SDE</p><script type="math/tex; mode=display">d\xi_t=b(t,\xi_t)dt+\sigma(t,\xi_t)dB_t</script><p>那么其反向转移密度函数是如下偏微分方程的基本解</p><script type="math/tex; mode=display">-\frac{\partial}{\partial t}p(x(t)|y(s))=\frac{1}{2}\frac{\partial^2}{\partial x^2}(\sigma(y(s))^2p(x(t)|y(s)))+\frac{\partial}{\partial x}(b(y(s))p(x(t)|y(s)))</script><p>【其中$s&gt;t$】</p><p>对于多维形式的SDE</p><script type="math/tex; mode=display">d\xi_t={\bf b}(t,\xi_t)dt+{\bf\Sigma}(t,\xi_t)dB_t</script><p>其向后方程为</p><script type="math/tex; mode=display">-\frac{\partial p({\bf x}(t)|{\bf y}(s))}{\partial t}=\frac{1}{2}\sum_{i,j=1}^d\frac{\partial^2}{\partial x_i\partial x_j}\left[\sum_{k=1}^d{\bf\Sigma}_{ik}(t,{\bf x}(t)){\bf\Sigma}_{jk}(t,{\bf x}(t))p({\bf x}(t),t)\right]-\sum_{i=1}^d\frac{\partial}{\partial x_i}\left[b_i(t,{\bf x}(t))p({\bf x}(t)|{\bf y}(s))\right]</script><p>也可以写为$\nabla$算子表示的形式，更加简洁【DDBM中给出的形式】</p><script type="math/tex; mode=display">-\frac{\partial}{\partial t}p({\bf x}_s|{\bf x}_t)=-\nabla_{ {\bf x}_t}\cdot\left[{\bf b}(t,{\bf x}_t)p({\bf x}_t|{\bf x}_s)\right]+\frac{1}{2}\nabla\cdot\left(\nabla\cdot\left[{\bf\Sigma}(t,{\bf x}_t){\bf\Sigma}(t,{\bf x}_t)^Tp({\bf x}_t|{\bf x}_s)\right]\right)</script><h2 id="Lamperti-Transform"><a href="#Lamperti-Transform" class="headerlink" title="Lamperti Transform"></a>Lamperti Transform</h2><p>假如给定一个如下形式的SDE</p><script type="math/tex; mode=display">d{\bf x}={\bf f}({\bf x},t)dt+{\bf L}({\bf x},t)d\beta</script><p>可以通过Lamperti Transform，将其变换为如下形式</p><script type="math/tex; mode=display">d{\bf y}={\bf g}({\bf y},t)dt+d\beta</script><p>即将噪声项前与${\bf L}({\bf x},t)$相关的项转移到$dt$微分前，这一操作在进行数值模拟运算的时候很有帮助，因为对于加性的噪声，处理会比较方便。</p><p>首先考虑一个标量形式</p><script type="math/tex; mode=display">dx=f(x,t)dt+L(x,t)d\beta</script><p>那么可以定义如下的变换形式</p><script type="math/tex; mode=display">y=h(x,t)+\int_\xi^t\frac{1}{L(u,t)}du</script><p>其中$\xi$为任意点。那么采用It$\hat o$公式到$h$上，可以得到</p><script type="math/tex; mode=display">\begin{align}dy=\frac{\partial h(x,t)}{\partial t}dt+\left(\frac{1}{L(x,t)}\right)dx+\frac{1}{2}\left(-\frac{\partial L(x,t)/\partial x}{L^2(x,t)}\right)dx^2\\=\left[\frac{\partial }{\partial t}\int_\xi^x\frac{1}{L(u,t)}du\right]dt+\left(\frac{1}{L(x,t)}\right)(f(x,t)dt+L(x,t)d\beta)+\frac{1}{2}\left(-\frac{\partial L(x,t)/\partial x}{L^2(x,t)}\right)L^2(x,t)dt\\=\left(\frac{\partial}{\partial t}\int_\xi^x\frac{1}{L(u,t)}du+\frac{f(x,t)}{L(x,t)}-\frac{1}{2}\frac{\partial L(x,t)}{\partial x}\right)dt+d\beta\end{align}</script><p>假如$x=h^{-1}(y,t)$存在，那么我们就可以构造出</p><script type="math/tex; mode=display">g(y,t)=\left(\frac{\partial}{\partial t}\int_\xi^x\frac{1}{L(u,t)}du+\frac{f(x,t)}{L(x,t)}-\frac{1}{2}\frac{\partial L(x,t)}{\partial x}\right)\Big|_{x=h^{-1}(y,t)}</script><h2 id="Girsanov-Theorem"><a href="#Girsanov-Theorem" class="headerlink" title="Girsanov Theorem"></a>Girsanov Theorem</h2><p>希望将原本的概率分布转变为另一个概率分布，可以通过该定理进行测度变换，使得仅改变SDE中的漂移项系数，而不改变扩散项前的方差系数。【有待进一步补充】</p><h2 id="Doob’s-h-transform"><a href="#Doob’s-h-transform" class="headerlink" title="Doob’s h transform"></a>Doob’s h transform</h2><p>定义$p({\bf y},t’|{\bf x},t):=p({\bf y}(t’)|{\bf x}(t))$为SDE的状态转移密度。定义函数$h(t,{\bf x})$满足如下的时空正则特性</p><script type="math/tex; mode=display">h(t,{\bf x})=\int p({\bf y},t+s|{\bf x},t)h(t+s,{\bf y})d{\bf y}</script><p>那么我们现在可以定义另一个马尔可夫过程$p^h({\bf y},t’|{\bf x},t):=p({\bf y}(t’)|{\bf x}(t))$</p><script type="math/tex; mode=display">p^h({\bf y},t+s|{\bf x},t)=p({\bf y},t+s|{\bf x},t)\frac{h(t+s,{\bf y})}{h(t,{\bf x})}</script><p>由于$h$满足时空正则特性，可以保证上述等式中$p^h({\bf y},t+s|{\bf x},t)$的积分为$1$。</p><blockquote><p><strong>通用生成器</strong>：对于$\phi({\bf x},t)$，其具有通用生成器</p><script type="math/tex; mode=display">\mathcal{A}_t\phi({\bf x},t)=\lim_{s\downarrow 0}\frac{\mathbb{E}[\phi({\bf x}(t+s),t+s)]-\phi({\bf x}(t),t)}{s}</script><p>【下箭头表示单调递减收敛于】</p><p>特别的，对于如下SDE</p><script type="math/tex; mode=display">d{\bf x}={\bf f}({\bf x},t)dt+{\bf L}({\bf x},t)d\beta</script><p>其生成器满足如下形式</p><script type="math/tex; mode=display">\mathcal{A}_t(\cdot)=\frac{\partial(\cdot)}{\partial t}+\sum_i\frac{\partial (\cdot)}{\partial x_i}f_i({\bf x},t)+\frac{1}{2}\sum_{i,j}\left(\frac{\partial^2(\cdot)}{\partial x_i\partial x_j}\right)[{\bf L}({\bf x},t){\bf Q}{\bf L}^T({\bf x},t)]_{ij}</script></blockquote><p>我们可以验证</p><script type="math/tex; mode=display">\begin{align}\mathcal{A}_t h\\=\lim_{s\downarrow 0}\frac{\mathbb{E}[h(t+s,{\bf x}(t+s))]-h(t,{\bf x}(t))}{s}\\=\lim_{s\downarrow 0}\frac{\mathbb{E}_{\bf x}[\int p({\bf y},t+s'|{\bf x},t+s)h(t+s',{\bf y})d{\bf y}]-h(t,{\bf x}(t))}{s}\\=\lim_{s\downarrow 0}\frac{\mathbb{E}_{\bf x}[\int p({\bf y},t+s'|{\bf x},t+s)h(t+s',{\bf y})d{\bf y}]-h(t,{\bf x}(t))}{s}\end{align}</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学理论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>扩散桥</title>
+      <link href="/2025/03/29/b88744a.html"/>
+      <url>/2025/03/29/b88744a.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生成式模型 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一致性模型</title>
       <link href="/2025/03/29/aad91066.html"/>
       <url>/2025/03/29/aad91066.html</url>
@@ -21,7 +96,7 @@
       <link href="/2025/03/20/ba24de2.html"/>
       <url>/2025/03/20/ba24de2.html</url>
       
-        <content type="html"><![CDATA[<h2 id="Analytic-DPM"><a href="#Analytic-DPM" class="headerlink" title="Analytic-DPM"></a>Analytic-DPM</h2><h2 id="DPM-solver"><a href="#DPM-solver" class="headerlink" title="DPM-solver"></a>DPM-solver</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="Analytic-DPM"><a href="#Analytic-DPM" class="headerlink" title="Analytic-DPM"></a>Analytic-DPM</h2><p>这篇文章提出，目前诸如DDPM和DDIM等模型在最优化ELBO的过程中，存在一个潜在的优化空间是，在给定的前向扩散过程的超参数下，其一般认为反向扩散过程的方差$\sigma_n^2$就是</p><h2 id="DPM-solver"><a href="#DPM-solver" class="headerlink" title="DPM-solver"></a>DPM-solver</h2>]]></content>
       
       
       <categories>
