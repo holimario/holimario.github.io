@@ -96,7 +96,7 @@
       <link href="/2025/03/20/ba24de2.html"/>
       <url>/2025/03/20/ba24de2.html</url>
       
-        <content type="html"><![CDATA[<p>【暂待完善】</p><h2 id="Analytic-DPM"><a href="#Analytic-DPM" class="headerlink" title="Analytic-DPM"></a>Analytic-DPM</h2><p>这篇文章提出，目前诸如DDPM和DDIM等模型在最优化ELBO的过程中，存在一个潜在的优化空间是，在给定的前向扩散过程的超参数下，其一般认为反向扩散过程的方差$\sigma_n^2$就是最优的方差取值，但是该文通过分析得到实际上并非如此。</p><h2 id="DPM-solver"><a href="#DPM-solver" class="headerlink" title="DPM-solver"></a>DPM-solver</h2><p>作者的PPT讲解已经比较清晰易懂，暂时贴上来，具体的解析之后补充。</p><p><a href="/files/DPM-Solver_short_talk.pdf">原作者讲解PPT</a></p>]]></content>
+        <content type="html"><![CDATA[<p>【暂待完善】</p><h2 id="Analytic-DPM"><a href="#Analytic-DPM" class="headerlink" title="Analytic-DPM"></a>Analytic-DPM</h2><p>这篇文章提出，目前诸如DDPM和DDIM等模型在最优化ELBO的过程中，存在一个潜在的优化空间是，在给定的前向扩散过程的超参数下，其一般认为反向扩散过程的方差$\sigma_n^2$就是最优的方差取值，但是该文通过分析得到实际上并非如此。</p><h2 id="DPM-solver"><a href="#DPM-solver" class="headerlink" title="DPM-solver"></a>DPM-solver</h2><p>作者的PPT讲解已经比较清晰易懂，暂时贴上来，具体的解析之后补充。</p><p>本质上是采用了宋飏论文中提出的正向SDE过程对应的ODE过程，通过泰勒展开来近似求解该ODE过程，从而显著提升推理效率。【Runge-Kutta Method也是一种数值求解ODE的算法】</p><p><a href="/files/DPM-Solver_short_talk.pdf">原作者讲解PPT</a></p>]]></content>
       
       
       <categories>
